@@ -20,6 +20,8 @@ class Dashboard extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->model('chamados_model');
+		$data['chamados'] = $this->chamados_model->index();
 		$data['title'] = 'Dashboard - Chamados';
 		$this->load->view('pages/dashboard', $data);
 	}
