@@ -30,8 +30,25 @@
 						<a href="<?= base_url() ?>chamados/edit/<?=$chamado["id"]?>" class="btn btn-sm btn-warning">
 							<i class="fas fa-pencil-alt"></i>
 						</a>
+						<a href="javascript:goDelete(<?= $chamado['id'] ?>)" class="btn btn-sm btn-danger">
+							<i class="fas fa-trash-alt"></i>
+						</a>
+						</td>
+                </tr>
+                    
                 <?php endforeach; ?>
 			</tbody>
 		</table>
 	</div>
 </main>
+
+<script>
+	function goDelete(id) {
+		var myUrl = 'chamados/delete/' + id
+		if(confirm('Realmente deseja excluir o chamado?')) {
+			window.location.href = myUrl;
+		}else {
+			alert('Operação cancelada')
+		}
+	}
+</script>
