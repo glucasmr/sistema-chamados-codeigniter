@@ -22,6 +22,7 @@ class Tickets extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		permission(); 
 		$this->load->model('tickets_model');
 	}
 

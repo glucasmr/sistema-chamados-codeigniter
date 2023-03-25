@@ -18,7 +18,15 @@ class Dashboard extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
-	public function index()
+	
+	 public function __construct()
+	 {
+		 parent::__construct();
+		 permission(); 
+		 $this->load->model('tickets_model');
+	 }
+
+	 public function index()
 	{
 		$this->load->model('tickets_model');
 		$data['tickets'] = $this->tickets_model->index();
