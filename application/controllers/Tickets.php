@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Chamados extends CI_Controller {
+class Tickets extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -22,17 +22,17 @@ class Chamados extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('chamados_model');
+		$this->load->model('tickets_model');
 	}
 
 	public function index()
 	{
-		$data['chamados'] = $this->chamados_model->index();
+		$data['tickets'] = $this->tickets_model->index();
 		$data['title'] = 'Chamados - Sistema Chamados';
 		
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/nav-top', $data);
-		$this->load->view('pages/chamados', $data);
+		$this->load->view('pages/tickets', $data);
 		$this->load->view('templates/footer', $data);
 		$this->load->view('templates/js', $data);
 	}
@@ -42,7 +42,7 @@ class Chamados extends CI_Controller {
 		
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/nav-top', $data);
-		$this->load->view('pages/form-chamados', $data);
+		$this->load->view('pages/form-tickets', $data);
 		$this->load->view('templates/footer', $data);
 		$this->load->view('templates/js', $data);
 		
@@ -50,39 +50,39 @@ class Chamados extends CI_Controller {
 
 	public function store(){
 
-		$chamado = $_POST;
-		$chamado['user_id']='1'; 
-		$chamado['create_date']='2023-23-04'; 
-		$chamado['update_date']='2023-23-04'; 
+		$ticket = $_POST;
+		$ticket['user_id']='1'; 
+		$ticket['create_date']='2023-23-04'; 
+		$ticket['update_date']='2023-23-04'; 
 		
-		$this->chamados_model->store($chamado);
+		$this->tickets_model->store($ticket);
 		redirect('dashboard');		
 	}
 
 	public function edit($id) {
-		$data['chamado'] = $this->chamados_model->show($id);
+		$data['ticket'] = $this->tickets_model->show($id);
 		$data['title'] = 'Editar Chamado - Sistema Chamados';
 	
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/nav-top', $data);
-		$this->load->view('pages/form-chamados', $data);
+		$this->load->view('pages/form-tickets', $data);
 		$this->load->view('templates/footer', $data);
 		$this->load->view('templates/js', $data);
 	}
 
 	public function update($id){
-		$chamado = $_POST;	
-		$chamado['user_id']='1'; 
-		$chamado['create_date']='2023-23-04'; 
-		$chamado['update_date']='2023-23-04'; 
+		$ticket = $_POST;	
+		$ticket['user_id']='1'; 
+		$ticket['create_date']='2023-23-04'; 
+		$ticket['update_date']='2023-23-04'; 
 		
-		$this->chamados_model->update($id, $chamado);
-		redirect('chamados');		
+		$this->tickets_model->update($id, $ticket);
+		redirect('tickets');		
 	}
 
 	public function delete($id){
-		$this->chamados_model->destroy($id);
-		redirect ('chamados');
+		$this->tickets_model->destroy($id);
+		redirect ('tickets');
 
 	}
 	

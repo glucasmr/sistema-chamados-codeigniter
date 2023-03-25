@@ -30,7 +30,7 @@
             </a>
           </li>
 					<li class="nav-item">
-            <a class="nav-link" href="<?= base_url('')?>chamados">
+            <a class="nav-link" href="<?= base_url('')?>tickets">
               <span data-feather="file"></span>
               Chamados
             </a>

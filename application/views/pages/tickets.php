@@ -2,7 +2,7 @@
 	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 		<h1 class="h2">Chamados</h1>
 		<div class="btn-group mr-2">
-			<a href="<?= base_url('')?>chamados/new" class="btn btn-sm btn-outline-secondary"><i class="fas fa-plus-square"></i> Chamado</a>
+			<a href="<?= base_url('')?>tickets/new" class="btn btn-sm btn-outline-secondary"><i class="fas fa-plus-square"></i> Chamado</a>
 		</div>
 	</div>
 
@@ -19,18 +19,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach ($chamados as $chamado) : ?>
+				<?php foreach ($tickets as $ticket) : ?>
                 <tr>
-                    <td><?= $chamado['id']?></td>
-                    <td><?= $chamado['description']?></td>
-                    <td><?= $chamado['status']?></td>
-                    <td><?= $chamado['create_date']?></td>
-                    <td><?= $chamado['update_date']?></td>
+                    <td><?= $ticket['id']?></td>
+                    <td><?= $ticket['description']?></td>
+                    <td><?= $ticket['status']?></td>
+                    <td><?= $ticket['create_date']?></td>
+                    <td><?= $ticket['update_date']?></td>
                     <td>
-						<a href="<?= base_url() ?>chamados/edit/<?=$chamado["id"]?>" class="btn btn-sm btn-warning">
+						<a href="<?= base_url() ?>tickets/edit/<?=$ticket["id"]?>" class="btn btn-sm btn-warning">
 							<i class="fas fa-pencil-alt"></i>
 						</a>
-						<a href="javascript:goDelete(<?= $chamado['id'] ?>)" class="btn btn-sm btn-danger">
+						<a href="javascript:goDelete(<?= $ticket['id'] ?>)" class="btn btn-sm btn-danger">
 							<i class="fas fa-trash-alt"></i>
 						</a>
 						</td>
@@ -44,7 +44,7 @@
 
 <script>
 	function goDelete(id) {
-		var myUrl = 'chamados/delete/' + id
+		var myUrl = 'tickets/delete/' + id
 		if(confirm('Realmente deseja excluir o chamado?')) {
 			window.location.href = myUrl;
 		}else {

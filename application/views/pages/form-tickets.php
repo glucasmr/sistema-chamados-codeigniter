@@ -4,28 +4,28 @@
       </div>
 
 			<div class="col-md-12">
-					<?php if(isset($chamado)): ?> 
-						<form action="<?= base_url() ?>chamados/update/<?= $chamado['id']?>" method="post">
+					<?php if(isset($ticket)): ?> 
+						<form action="<?= base_url() ?>tickets/update/<?= $ticket['id']?>" method="post">
 					<?php else : ?>
-						<form action="<?= base_url() ?>chamados/store" method="post">
+						<form action="<?= base_url() ?>tickets/store" method="post">
 					<?php endif; ?>
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="description">Descrição</label>
-							<textarea class="form-control" rows="5" name="description" id="description" placeholder="Relate seu problema" required ><?= isset($chamado) ? $chamado["description"] : "" ?></textarea>
+							<textarea class="form-control" rows="5" name="description" id="description" placeholder="Relate seu problema" required ><?= isset($ticket) ? $ticket["description"] : "" ?></textarea>
 						</div>
 					</div>
 
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="category">Status</label>
-							<input type="text" class="form-control" name="status" id="status" placeholder="Status do chamado" required value="<?= isset($chamado) ? $chamado["status"] : "" ?>">
+							<input type="text" class="form-control" name="status" id="status" placeholder="Status do chamado" required value="<?= isset($ticket) ? $ticket["status"] : "" ?>">
 						</div>
 					</div>
 
 					<div class="col-md-6">
 							<button type="submit" class="btn btn-success btn-xs"><i class="fas fa-check"></i> Salvar</button>
-							<a href="<?= base_url()?>chamados" class="btn btn-danger btn-xs"><i class="fas fa-times"></i> Cancelar</a>
+							<a href="<?= base_url()?>tickets" class="btn btn-danger btn-xs"><i class="fas fa-times"></i> Cancelar</a>
 						</div>
 					</div>
 				</form>

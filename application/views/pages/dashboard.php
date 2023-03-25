@@ -25,13 +25,13 @@
 				</tr>
 			</thead>
 			<tbody>
-                <?php foreach ($chamados as $chamado): ?>
+                <?php foreach ($tickets as $ticket): ?>
                     <tr>
-                        <td><?= $chamado['id']?></td>
-                        <td><?= $chamado['description']?></td>
-                        <td><?= $chamado['status']?></td>
-                        <td><?= $chamado['create_date']?></td>
-                        <td><?= $chamado['update_date']?></td>
+                        <td><?= $ticket['id']?></td>
+                        <td><?= $ticket['description']?></td>
+                        <td><?= $ticket['status']?></td>
+                        <td><?= $ticket['create_date']?></td>
+                        <td><?= $ticket['update_date']?></td>
                         <td>xxx</td>
                     </tr>
                     
