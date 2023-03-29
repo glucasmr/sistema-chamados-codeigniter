@@ -1,15 +1,63 @@
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 		<h1 class="h2">Dashboard</h1>
 		<div class="btn-toolbar mb-2 mb-md-0">
 			<div class="btn-group mr-2">
-				<a href="" class="btn btn-sm btn-outline-secondary"><i class="fas fa-plus-square"></i> Chamado</a>
+				<a href="<?= base_url() ?>tickets/new" class="btn btn-sm btn-outline-secondary"><i class="fas fa-plus-square"></i> Chamado</a>
 			</div>
 		</div>
 	</div>
 
-	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-		<h2 class="h2">Chamados</h2>
+	<div class="d-flex justify-content-between">
+
+		<div class="card bg-secondary" style="width: 18rem;">
+			<div class="card-body text-white">
+				<h6 class="card-title font-weight-normal">Chamados</h6>
+				<h1 class="text-xl-left font-weight-bolder ">
+				<?= sizeof($tickets); ?>
+				</h1>
+			</div>
+		</div>
+		<div class="card bg-success" style="width: 18rem;">
+			<!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+			<div class="card-body text-white">
+				<h6 class="card-title font-weight-normal">Chamados solucionados</h6>
+				<h1 class="text-xl-left font-weight-bolder ">
+				<?php $solved_tickets = 0;
+					foreach ($tickets as $ticket) {
+						if($ticket['status_id']== 4):
+							$solved_tickets++;
+						endif;
+					}?>
+					<?=$solved_tickets;?>
+				</h1>
+			</div>
+		</div>
+		<div class="card bg-danger" style="width: 18rem;">
+			<!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+			<div class="card-body text-white">
+				<h6 class="card-title font-weight-normal">Chamados pendentes</h6>
+				<h1 class="text-xl-left font-weight-bolder ">
+				<?php $solved_tickets = 0;
+					foreach ($tickets as $ticket) {
+						if($ticket['status_id']== 3):
+							$solved_tickets++;
+						endif;
+					}?>
+					<?=$solved_tickets;?>
+				</h1>
+			</div>
+		</div>
+		<div class="card bg-info" style="width: 18rem;">
+			<!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+			<div class="card-body text-white">
+				<h6 class="card-title font-weight-normal">Usuários ativos</h6>
+				<h1 class="text-xl-left font-weight-bolder ">
+				<?= sizeof($users); ?>
+				</h1>
+			</div>
+		</div>
+	
 	</div>
 
 	<p class="text-danger font-weight-bold">
@@ -30,7 +78,7 @@
 			</thead>
 			<tbody>
 				<?php foreach ($tickets as $ticket) : ?>
-                    <tr>
+					<tr>
 						<td><?= $ticket['id'] ?></td>
 						<td><?= $ticket['title'] ?></td>
 						<td>
@@ -75,33 +123,14 @@
 								</button>
 							<?php endif; ?>
 						</td>
-                    </tr>
-                    
-                <?php endforeach; ?>
-				
+					</tr>
+
+				<?php endforeach; ?>
 			</tbody>
 		</table>
 	</div>
 
-	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-		<h2 class="h2">Last 5 Users</h2>
-	</div>
 
-	<div class="table-responsive">
-		<table class="table table-bordered table-hover">
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>Name</th>
-					<th>Email</th>
-					<th>Country</th>
-				</tr>
-			</thead>
-			<tbody>
-				
-			</tbody>
-		</table>
-	</div>
 </main>
 
 <script>
