@@ -1,8 +1,7 @@
-###################
-Sistema-chamados-codegigniter
-###################
 
->In this readme I will help you with the installation and execution of the project step by step.
+Sistema-chamados-codegigniter
+
+> In this readme I will help you with the installation and execution of the project step by step.
 
 ## 💻 Requirements (libs, dependencies, packages)
 
@@ -32,14 +31,14 @@ Create database in PhpMyAdmin:
 name: chamados_ci_db
 collation: utf8_unicode_ci
 ```
-select the database in PhpMyAdmin and run the chamados_ci_db.sql script found in the root of the project directory:
+select the database in PhpMyAdmin, paste and run the chamados_ci_db.sql script found in the root of the project directory:
 ```
 run chamados_ci_db.sql 
 ```
 Open the app in the browser:
 ```
 http://localhost/sistema-chamados-codeigniter/
-
+```
 
 ## ☕ Using Sistema-chamados-codegigniter
 
