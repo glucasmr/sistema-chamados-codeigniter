@@ -25,7 +25,7 @@
 				<h1 class="text-xl-left font-weight-bolder ">
 				<?php $solved_tickets = 0;
 					foreach ($tickets as $ticket) {
-						if($ticket['status_id']== 4):
+						if($ticket['status_id']== 3):
 							$solved_tickets++;
 						endif;
 					}?>
@@ -40,7 +40,7 @@
 				<h1 class="text-xl-left font-weight-bolder ">
 				<?php $solved_tickets = 0;
 					foreach ($tickets as $ticket) {
-						if($ticket['status_id']== 3):
+						if($ticket['status_id']== 2):
 							$solved_tickets++;
 						endif;
 					}?>
