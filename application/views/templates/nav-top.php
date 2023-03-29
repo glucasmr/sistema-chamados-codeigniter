@@ -1,13 +1,9 @@
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Sistema Chamados</a>
-	<div>
-		<form action="" method="post">
-			<input class="form-control form-control-dark" type="text" name="busca" id="busca" placeholder="Search" aria-label="Search" value="">
-		</form>
-	</div>
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="<?= base_url()?>dashboard">Sistema Chamados</a>
+	
   <ul class="navbar-nav px-3">
-    <li class="nav-item text-nowrap">
-      <a class="nav-link" href="<?= base_url() ?>login/logout">Sign out</a>
+    <li class="nav-item text-nowrap"> 
+      <a class="nav-link" href="<?= base_url() ?>login/logout">Sair</a>
     </li>
   </ul>
 </nav>
@@ -23,30 +19,44 @@
           </a>
         </h6>
         <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('')?>dashboard">
+          <?php if($user_id = $_SESSION["logged_user"]['is_admin']) : ?>
+            <li class="nav-item">
+            <a class="nav-link" href="<?= base_url()?>dashboard">
               <span data-feather="file"></span>
               Dashboard
             </a>
           </li>
+            <?php endif; ?>
 					<li class="nav-item">
-            <a class="nav-link" href="<?= base_url('')?>tickets">
+            <a class="nav-link" href="<?= base_url()?>tickets">
               <span data-feather="file"></span>
-              Chamados
+              Seus Chamados
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+          <?php if($user_id = $_SESSION["logged_user"]['is_admin']) : ?>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= base_url()?>users">
               <span data-feather="shopping-cart"></span>
-              Users
+              Usuários
             </a>
 					</li>
-					<li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="shopping-cart"></span>
-              My Games
-            </a>
-          </li>
+          <?php endif; ?>
+					
+          <?php if($user_id = $_SESSION["logged_user"]['is_admin']) : ?>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= base_url()?>status">
+                <span data-feather="shopping-cart"></span>
+                Status dos Chamados
+              </a>
+            </li>
+            <?php endif; ?>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= base_url()?>users/profile">
+                <span data-feather="file"></span>
+                Perfil
+              </a>
+            </li>
+        
         </ul>
       </div>
     </nav>
