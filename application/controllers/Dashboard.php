@@ -22,14 +22,19 @@ class Dashboard extends CI_Controller {
 	 public function __construct()
 	 {
 		 parent::__construct();
-		 permission(); 
+		 admin_permission(); 
 		 $this->load->model('tickets_model');
+		 $this->load->model('users_model');
+		 $this->load->model('status_model');
 	 }
 
 	 public function index()
 	{
 		$this->load->model('tickets_model');
-		$data['tickets'] = $this->tickets_model->index();
+		$controller = 'dashboard';
+		$data['tickets'] = $this->tickets_model->index($controller);
+		$data['users'] = $this->users_model->index();
+		$data['status'] = $this->status_model->index();
 		$data['title'] = 'Dashboard - Sistema Chamados';
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/nav-top', $data);
