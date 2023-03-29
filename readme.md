@@ -50,7 +50,7 @@ password: 123
 ```
 Or using the default user account:
 ```
-email: admin@email.com
+email: user@email.com
 password: 123
 ```
 Or you can signup and create your account!
