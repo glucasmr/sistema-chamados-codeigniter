@@ -1,71 +1,57 @@
 ###################
-What is CodeIgniter
+Sistema-chamados-codegigniter
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+>In this readme I will help you with the installation and execution of the project step by step.
 
-*******************
-Release Information
-*******************
+## 💻 Requirements (libs, dependencies, packages)
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+- [x] Xampp or WAMP
+- [x] PHP
+- [x] MySQL
+- [x] Git
 
-**************************
-Changelog and New Features
-**************************
+Before you start, check if you follow these requirements:
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+* You've installed in your machine the latest version of:  `  PHP / git / VSCode or another IDE`
 
-*******************
-Server Requirements
-*******************
+## 🚀 Installing Sistema-chamados-codegigniter
 
-PHP version 5.6 or newer is recommended.
+For installing Sistema-chamados-codegigniter, follow these steps:
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+Git Clone to xampp/htdocs folder:
+```
+git clone https://github.com/glucasmr/sistema-chamados-codeigniter.git
+```
+Start the Apache and MySQL server modules in XAMPP and open PhpMyAdmin in the browser:
+```
+http://localhost/phpmyadmin
+```
+Create database in PhpMyAdmin:
+```
+name: chamados_ci_db
+collation: utf8_unicode_ci
+```
+select the database in PhpMyAdmin and run the chamados_ci_db.sql script found in the root of the project directory:
+```
+run chamados_ci_db.sql 
+```
+Open the app in the browser:
+```
+http://localhost/sistema-chamados-codeigniter/
 
-************
-Installation
-************
 
-Please see the `installation section <https://codeigniter.com/userguide3/installation/index.html>`_
-of the CodeIgniter User Guide.
+## ☕ Using Sistema-chamados-codegigniter
 
-*******
-License
-*******
+You can login using the default admin account and password:
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Contributing Guide <https://github.com/bcit-ci/CodeIgniter/blob/develop/contributing.md>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+```
+email: admin@email.com
+password: 123
+```
+Or using the default user account:
+```
+email: admin@email.com
+password: 123
+```
+Or you can signup and create your account!
