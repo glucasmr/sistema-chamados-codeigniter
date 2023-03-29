@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Signup extends CI_Controller {
+class Signup extends CI_Controller
+{
 
 	/**
 	 * Index Page for this controller.
@@ -24,16 +25,20 @@ class Signup extends CI_Controller {
 		$this->load->view('pages/signup', $data);
 	}
 
-	public function store(){
+	public function store()
+	{
 		$this->load->model('users_model');
-		
 		$user = array(
 			"name" => $_POST['name'],
 			"email" => $_POST['email'],
 			"password" => md5($_POST['password']),
 		);
-
+		if ($this->users_model->getUserByEmail($user['email'])) {
+			$msg = 'Este e-mail já está sendo utilizado';
+			$this->session->set_flashdata('msg', $msg);
+			redirect('signup');
+		}
 		$this->users_model->store($user);
-			redirect ('login');
+		redirect('login');
 	}
 }

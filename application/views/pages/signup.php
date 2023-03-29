@@ -38,22 +38,23 @@
   <body class="text-center">
     <form class="form-signin" method="post" action="<?= base_url() ?>signup/store">
   <img class="mb-4" src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-	<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+	<h1 class="h3 mb-3 font-weight-normal">Cadastro</h1>
 
-	<label for="inputName" class="sr-only">Name</label>
-	<input type="text" name="name" id="inputName" class="form-control" placeholder="Your Name" required autofocus>
-
-  <label for="inputEmail" class="sr-only">Email address</label>
-	<input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+	<label for="inputName" class="sr-only">Nome</label>
+	<input type="text" name="name" id="inputName" class="form-control" placeholder="Seu nome" required autofocus>
+  <label for="inputEmail" class="sr-only">E-mail</label>
+	<input type="email" name="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
 	
-  <label for="inputPassword" class="sr-only">Password</label>
-	<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-	
-	<p>
-		<a href="<?= base_url() ?>login">Already Have an Account?</a>
+  <label for="inputPassword" class="sr-only">Senha</label>
+	<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+	<p class="text-danger">
+    <?= $this->session->flashdata('msg'); ?>
 	</p>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+	<p>
+		<a href="<?= base_url() ?>login">Já possui uma conta?</a>
+	</p>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastre-se</button>
+  <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
 </form>
 </body>
 </html>
