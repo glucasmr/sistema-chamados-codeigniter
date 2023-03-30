@@ -4,10 +4,7 @@
 	</div>
 	<div class="col-md-12 pt-3 row align-items-start">
 	<p class="text-success font-weight-bold">
-	<?= $this->session->flashdata('msgSuccess'); ?>
-	</p>
-	<p class="text-danger font-weight-bold">
-	<?= $this->session->flashdata('msgFailure'); ?>
+	<?= $this->session->flashdata('msgSucess'); ?>
 	</p>
 		<div class="col">
 			<h4>Nome </h4>

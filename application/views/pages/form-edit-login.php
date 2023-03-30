@@ -2,8 +2,8 @@
 	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 	<h1 class="h2">Editar dados de login</h1>
 	</div>
-	<p class="text-success font-weight-bold">
-	<?= $this->session->flashdata('msgsSuccess'); ?>
+	<p class="text-danger font-weight-bold">
+	<?= $this->session->flashdata('msgFailure'); ?>
 	</p>
 	<div class="row">
 
@@ -11,14 +11,14 @@
 
 			<form action="<?= base_url() ?>users/updateLogin/<?= $user['id'] ?>" method="post">
 				<div class="form-group">
-					<label for="email">Novo endereço de E-mail</label>
-					<input type="text" class="form-control" name="email" id="email" placeholder="Endereço de e-mail"
+					<label for="email">Endereço de E-mail</label>
+					<input type="email" class="form-control" name="email" id="email" placeholder="Digite o novo endereço de e-mail caso deseje alterar" required autofocus
 					 value="<?= $user["email"] ?>">
 				</div>
 
 				<div class="form-group">
 					<label for="newPassword">Nova senha</label>
-					<input type="password" name="newPassword" id="newPassword" class="form-control" placeholder="Digite sua nova senha">
+					<input type="password" name="newPassword" id="newPassword" class="form-control" placeholder="Deixe em branco caso não deseje alterar">
 					</input>
 				</div>
 
@@ -26,14 +26,14 @@
 
 				<div class="form-group">
 					<label for="confirmPassword">Confirme a nova senha</label>
-					<input type="password" name="confirmPassword" id="confirmPassword" class="form-control" placeholder="Confirme a nova senha">
+					<input type="password" name="confirmPassword" id="confirmPassword" class="form-control" placeholder="Deixe em branco caso não deseje alterar">
 					</input>
 				</div>
 
 
 			<div class="form-group">
 				<label for="password">Senha atual</label><span class="text-danger">*</span>
-				<input type="password" name="password" id="password" class="form-control" placeholder="Digite sua senha atual" required>
+				<input type="password" name="password" id="password" class="form-control" placeholder="Digite sua senha atual" required autofocus>
 				</input>
 			</div>
 

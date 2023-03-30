@@ -66,7 +66,7 @@ class Users extends CI_Controller
 		$this->load->model('users_model');
 		$this->users_model->update($id, $user);
 		$msg = 'Dados editados com sucesso.';
-		$this->session->set_flashdata('msg', $msg);
+		$this->session->set_flashdata('msgSucess', $msg);
 		redirect('users/profile');
 	}
 
@@ -124,8 +124,8 @@ class Users extends CI_Controller
 		if ($user) {
 			if ($_POST['newPassword'] != $_POST['confirmPassword']) {
 				$msgFailure = 'Nova senha e confirmação são diferentes.';
-				$this->session->set_flashdata('msg', $msgFailure);
-				redirect('users/edit/'.$id);
+				$this->session->set_flashdata('msgFailure', $msgFailure);
+				redirect('users/editLogin/'.$id);
 			} else if ($_POST['newPassword'] != '') {
 				$user['password'] = md5($_POST['newPassword']);;
 			}
@@ -137,8 +137,8 @@ class Users extends CI_Controller
 			redirect('users/profile');
 		} else {
 			$msgFailure = 'Senha incorreta.';
-			$this->session->set_flashdata('msg', $msgFailure);
-			redirect('users/profile');
+			$this->session->set_flashdata('msgFailure', $msgFailure);
+			redirect('users/editLogin/'.$id);
 		}
 	}
 }

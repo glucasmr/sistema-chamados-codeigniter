@@ -9,6 +9,9 @@
 	<p class="text-success font-weight-bold">
 	<?= $this->session->flashdata('msgSuccess'); ?>
 	</p>
+	<p class="text-danger font-weight-bold">
+	<?= $this->session->flashdata('msgFailure'); ?>
+	</p>
 	
 	<div class="row">
 
