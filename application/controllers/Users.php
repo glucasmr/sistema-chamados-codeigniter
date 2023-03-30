@@ -122,6 +122,18 @@ class Users extends CI_Controller
 		$password = md5($_POST['password']);
 		$user = $this->login_model->store($email, $password);
 		if ($user) {
+			if(!$_POST['email']){
+				$msgFailure = 'E-mail inválido.';
+				$this->session->set_flashdata('msg', $msgFailure);
+				redirect('users/editLogin/'.$id);
+			}
+			if($_POST['email']!=$email){
+				if ($this->users_model->getUserByEmail($user['email'])) {
+					$msgFailure = 'Este e-mail já está sendo utilizado';
+					$this->session->set_flashdata('msgFailure', $msgFailure);
+				redirect('users/editLogin/'.$id);
+				}
+			}
 			if ($_POST['newPassword'] != $_POST['confirmPassword']) {
 				$msgFailure = 'Nova senha e confirmação são diferentes.';
 				$this->session->set_flashdata('msgFailure', $msgFailure);
@@ -130,7 +142,7 @@ class Users extends CI_Controller
 				$user['password'] = md5($_POST['newPassword']);;
 			}
 			$user['email'] = $_POST['email'];
-			$this->load->model('users_model');
+			$this->load->model('users_model');		
 			$this->users_model->update($id, $user);
 			$msgSuccess = 'Dados editados com sucesso.';
 			$this->session->set_flashdata('msg', $msgSuccess);
